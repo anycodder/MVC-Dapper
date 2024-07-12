@@ -1,0 +1,47 @@
+@model Dapper.Project.Core.Entity.Cargo
+
+<h2>Delete Confirmation</h2>
+
+<h3>Are you sure you want to delete this record?</h3>
+<div>
+    <h4>Cargo Record:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sales_titles_id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sales_titles_id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cargo_brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cargo_brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cargo_status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cargo_status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cargo_estimated_delivery_date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cargo_estimated_delivery_date)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Cancel</a>
+    </form>
+</div>

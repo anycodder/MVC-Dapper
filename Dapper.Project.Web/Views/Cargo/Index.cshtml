@@ -1,0 +1,56 @@
+@model IEnumerable<Dapper.Project.Core.Entity.Cargo>
+
+<h2>Cargo Records</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Sales Title ID
+        </th>
+        <th>
+            User ID
+        </th>
+        <th>
+            Cargo Brand
+        </th>
+        <th>
+            Cargo Status
+        </th>
+        <th>
+            Estimated Delivery Date
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_titles_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo_brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo_estimated_delivery_date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

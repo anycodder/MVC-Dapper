@@ -1,0 +1,31 @@
+@model System.Collections.Generic.IEnumerable<Dapper.Project.Core.Entity.Sales_Titles>
+
+<h2>Sales Titles</h2>
+<a class="btn btn-success" href="@Url.Action("Create")">Create New</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Sales Title ID</th>
+        <th>User ID</th>
+        <th>Sales Title Date </th>
+        <th>Sales Title Total Price</th>
+        <th>Sales Title Order Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var salestitles in Model)
+    {
+        <tr>
+            <td>@salestitles.id</td>
+            <td>@salestitles.user_id</td>
+            <td>@salestitles.sales_titles_date?.ToString("yyyy-MM-dd")</td>
+            <td>@salestitles.sales_titles_total_price</td>
+            <td>@salestitles.sales_titles_order_status</td>
+            <td>
+                <a asp-action="Edit" asp-controller="SalesTitles" asp-route-id="@salestitles.id" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-controller="SalesTitles" asp-route-id="@salestitles.id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

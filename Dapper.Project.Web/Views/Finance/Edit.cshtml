@@ -1,0 +1,44 @@
+@model Dapper.Project.Core.Entity.Finance
+
+<h2>Edit Finance Record</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="sales_titles_id" class="control-label"></label>
+        <input asp-for="sales_titles_id" class="form-control" />
+        <span asp-validation-for="sales_titles_id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="suppliers_id" class="control-label"></label>
+        <input asp-for="suppliers_id" class="form-control" />
+        <span asp-validation-for="suppliers_id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="finance_date" class="control-label"></label>
+        <input asp-for="finance_date" class="form-control" />
+        <span asp-validation-for="finance_date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="finance_earnings" class="control-label"></label>
+        <input asp-for="finance_earnings" class="form-control" />
+        <span asp-validation-for="finance_earnings" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="finance_commissions" class="control-label"></label>
+        <input asp-for="finance_commissions" class="form-control" />
+        <span asp-validation-for="finance_commissions" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

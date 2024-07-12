@@ -1,0 +1,62 @@
+@model IEnumerable<Dapper.Project.Core.Entity.Finance>
+
+<h2>Finance Records</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Sales Titles ID
+        </th>
+        <th>
+            Suppliers ID
+        </th>
+        <th>
+            Finance Date
+        </th>
+        <th>
+            Finance Earnings
+        </th>
+        <th>
+            Finance Commissions
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_titles_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.suppliers_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finance_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finance_earnings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finance_commissions)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

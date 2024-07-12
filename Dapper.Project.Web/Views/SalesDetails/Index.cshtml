@@ -1,0 +1,56 @@
+@model IEnumerable<Dapper.Project.Core.Entity.Sales_Details>
+
+<h2>Sales Details</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Sales Titles ID
+        </th>
+        <th>
+            Product ID
+        </th>
+        <th>
+            Unit Price of Product
+        </th>
+        <th>
+            Number of Product
+        </th>
+        <th>
+            Product Payment
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_title_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_detail_unit_price_of_product)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_detail_number_of_product)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sales_detail_product_payment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

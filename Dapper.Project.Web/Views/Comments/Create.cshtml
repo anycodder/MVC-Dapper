@@ -1,0 +1,59 @@
+@model Dapper.Project.Core.Entity.Comments
+
+@{
+    ViewData["Title"] = "Create Comment";
+}
+
+<h2>@ViewData["Title"]</h2>
+@Html.AntiForgeryToken()
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label asp-for="product_id" class="control-label">Product</label>
+        <input asp-for="product_id" class="form-control" />
+        <span asp-validation-for="product_id" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="user_id" class="control-label">User</label>
+       <input asp-for="user_id" class="form-control" />
+        <span asp-validation-for="user_id" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="answer_id" class="control-label">Answer</label>
+        <input asp-for="answer_id" class="form-control" />
+        <span asp-validation-for="answer_id" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="comment_text" class="control-label"></label>
+        <input asp-for="comment_text" class="form-control" />
+        <span asp-validation-for="comment_text" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="comment_date" class="control-label"></label>
+        <input asp-for="comment_date" class="form-control" />
+        <span asp-validation-for="comment_date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="comment_type" class="control-label"></label>
+        <input asp-for="comment_type" class="form-control" />
+        <span asp-validation-for="comment_type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="comment_score" class="control-label"></label>
+        <input asp-for="comment_score" class="form-control" />
+        <span asp-validation-for="comment_score" class="text-danger"></span>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+</div>

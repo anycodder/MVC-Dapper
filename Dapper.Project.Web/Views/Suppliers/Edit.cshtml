@@ -1,0 +1,24 @@
+@model Dapper.Project.Core.Entity.Suppliers
+
+<h2>Edit Suppliers</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="id" />
+    <div class="form-group">
+        <input asp-for="product_id" class="form-control" placeholder="ID"/>
+    </div>
+    <div class="form-group">
+        <input asp-for="suppliers_product_brand" class="form-control" placeholder="Brand"/>
+    </div>
+    <div class="form-group">
+        <input asp-for="suppliers_communication_information" class="form-control" placeholder="Information"/>
+    </div>
+    <div class="form-group">
+        <input asp-for="suppliers_address" class="form-control" placeholder="Address"/>
+    </div>
+    <div class="form-group">
+        <input asp-for="suppliers_iban" class="form-control" placeholder="Iban"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+</form>

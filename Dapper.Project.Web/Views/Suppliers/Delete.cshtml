@@ -1,0 +1,45 @@
+@model Dapper.Project.Core.Entity.Suppliers
+
+@{
+    ViewData["Title"] = "Suppliers Comment";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Are you sure you want to delete this comment?</h3>
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.suppliers_product_brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.suppliers_product_brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.suppliers_communication_information)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.suppliers_communication_information)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.suppliers_address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.suppliers_address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.suppliers_iban)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.suppliers_iban)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
